@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warmups/login_screen.dart';
 import 'constants.dart';
 
 void main() {
@@ -26,6 +27,13 @@ class MyApp extends StatelessWidget {
           headline5: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.normal,
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white.withOpacity(.2),
+            ),
           ),
         ),
       ),
@@ -72,30 +80,43 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 FittedBox(
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 25),
-                    padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: primaryColor,
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          'START LEARNING',
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: Colors.black,
-                        )
-                      ],
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 25),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: primaryColor,
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            'START LEARNING',
+                            style: Theme.of(context)
+                                .textTheme
+                                .button
+                                .copyWith(color: Colors.black),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
