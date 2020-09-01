@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           headline5: TextStyle(fontWeight: FontWeight.bold),
           button: TextStyle(fontWeight: FontWeight.bold),
+          bodyText2: TextStyle(color: kTextColor),
         ),
       ),
       home: HomeScreen(),
