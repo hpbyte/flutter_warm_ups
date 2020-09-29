@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:warmups/observer.dart';
 
 import 'bloc/post_bloc.dart';
 import 'ui/screens/home.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(App());
 }
 
